@@ -8,7 +8,7 @@ import os
 import sys
 
 # 🚩 Change this to your download folder
-download_dir = "/Users/manan/Documents/git projects/commoditiesoptionchain-1"
+download_dir = "/Users/manan/Documents/git projects/commoditiesoptionchain"
 
 print("🔧 Configuring Chrome options...")
 options = webdriver.ChromeOptions()
