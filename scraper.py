@@ -1,65 +1,80 @@
-import os
-import time
-from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
+import os
+import sys
 
-# === CONFIG ===
-DOWNLOAD_DIR = os.path.abspath(".")  # project folder
-CHROMEDRIVER_PATH = "/opt/homebrew/bin/chromedriver"  # change if needed
+# 🚩 Change this to your download folder
+download_dir = "/Users/manan/Documents/git projects/commoditiesoptionchain-1"
 
-# === Chrome setup ===
-options = Options()
+print("🔧 Configuring Chrome options...")
+options = webdriver.ChromeOptions()
 options.add_experimental_option("prefs", {
-    "download.default_directory": DOWNLOAD_DIR,
+    "download.default_directory": download_dir,
     "download.prompt_for_download": False,
-    "download.directory_upgrade": True,
     "safebrowsing.enabled": True
 })
-# Optional: Headless mode
-# options.add_argument("--headless=new")
-
-# === Launch Chrome ===
-service = Service(CHROMEDRIVER_PATH)
-driver = webdriver.Chrome(service=service, options=options)
-driver.get("https://www.mcxindia.com/market-data/bhavcopy")
-
 
 try:
-    print("⏳ Waiting for CSV icon via XPath...")
+    print("🚀 Launching Chrome driver...")
+    driver = webdriver.Chrome(service=Service(), options=options)
+except Exception as e:
+    print(f"❌ Failed to launch Chrome: {e}")
+    sys.exit(1)
 
-    # Use full XPath here
-    download_link = WebDriverWait(driver, 15).until(
-        EC.element_to_be_clickable((By.XPATH, '/html/body/form/div[4]/div[3]/div/div[1]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[5]/a[2]'))
+try:
+    print("🌐 Opening MCX Bhavcopy page...")
+    driver.get("https://www.mcxindia.com/market-data/bhavcopy")
+    time.sleep(3)
+
+    print("🔍 Looking for CSV download link with ID `lnkExpToCSV`...")
+    link = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "lnkExpToCSV"))
     )
+    print("✅ Found download link!")
 
-    # Scroll into view and click via JS
-    driver.execute_script("arguments[0].scrollIntoView(true);", download_link)
-    time.sleep(1)
-    driver.execute_script("arguments[0].click();", download_link)
+    try:
+        print("📦 Scrolling into view...")
+        driver.execute_script("arguments[0].scrollIntoView(true);", link)
+        time.sleep(1)
+    except Exception as e:
+        print(f"⚠️ Could not scroll: {e}")
 
-    print("✅ CSV download link clicked.")
+    try:
+        print("🖱️ Attempting normal click...")
+        WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.ID, "lnkExpToCSV")))
+        link.click()
+        print("✅ Normal click successful.")
+    except Exception as e:
+        print(f"⚠️ Normal click failed: {e}")
+        print("🧪 Trying JavaScript click...")
+        try:
+            driver.execute_script("document.getElementById('lnkExpToCSV').click();")
+            print("✅ JavaScript click successful.")
+        except Exception as js_e:
+            print(f"❌ JavaScript click also failed: {js_e}")
+            raise
+
+    print("⏳ Waiting for CSV file to appear in download folder...")
+    found = False
+    wait_seconds = 20
+    for second in range(wait_seconds):
+        files = [f for f in os.listdir(download_dir) if f.endswith(".csv")]
+        if files:
+            print(f"✅ CSV file downloaded: {files[0]}")
+            found = True
+            break
+        time.sleep(1)
+
+    if not found:
+        print("❌ CSV file not found after timeout. Check browser settings or site behavior.")
 
 except Exception as e:
-    print(f"❌ Could not click download link: {str(e)}")
+    print(f"🔥 Script failed: {e}")
 
-
-# === Wait for the file to appear ===
-today = datetime.now().strftime("%d%m%Y")
-expected_filename = f"BhavCopyDateWise_{today}.csv"
-download_path = os.path.join(DOWNLOAD_DIR, expected_filename)
-
-print("⏳ Waiting for CSV file...")
-for _ in range(30):  # wait up to 30 seconds
-    if os.path.exists(download_path):
-        print(f"✅ File downloaded: {expected_filename}")
-        break
-    time.sleep(1)
-else:
-    print("❌ File did not download in time.")
-
-driver.quit()
+finally:
+    print("🧹 Closing browser...")
+    driver.quit()
