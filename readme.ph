@@ -6,4 +6,6 @@ Commodities:
 
 Pulls OPTCOM and FUTCOM from https://www.mcxindia.com/market-data/bhavcopy everyday scheduled at 10:45 am. 
 
-Takes the specific data and parses it.
+Takes the previous day's Futures and options from the csv, parses it and then appends to excel file.
+
+Fixes data validation errors.
