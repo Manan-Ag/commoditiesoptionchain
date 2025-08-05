@@ -7,14 +7,28 @@ import tkinter as tk
 from tkinter import messagebox
 from csvtoxlsm import update_xlsm_with_bhavcopy
 from datevalidation import add_date_dropdown_to_option_chain
+import logging
 
 # === Check for internet connection ===
 def is_connected():
     try:
-        urllib.request.urlopen('https://www.google.com', timeout=5)
+        # Try multiple methods to check connectivity
+        # Method 1: Try HTTP first (no SSL issues)
+        urllib.request.urlopen('http://www.google.com', timeout=5)
         return True
     except:
-        return False
+        try:
+            # Method 2: Try HTTPS
+            urllib.request.urlopen('https://www.google.com', timeout=5)
+            return True
+        except:
+            try:
+                # Method 3: Use subprocess ping as fallback
+                result = subprocess.run(['ping', '-c', '1', 'google.com'], 
+                                      capture_output=True, timeout=10)
+                return result.returncode == 0
+            except:
+                return False
 
 # === GUI Prompt ===
 def confirm_popup():
@@ -25,12 +39,12 @@ def confirm_popup():
 # === STEP 1: DELETE OLD BhavCopy CSVs ===
 def delete_old_bhavcopies(directory, prefix="BhavCopyDateWise_"):
     for file in glob.glob(os.path.join(directory, f"{prefix}*.csv")):
-        print(f"🗑️ Deleting old file: {file}")
+        log(f"🗑️ Deleting old file: {file}")
         os.remove(file)
 
 # === STEP 2: RUN SCRAPER TO DOWNLOAD NEW CSV ===
 def run_scraper():
-    print("🔄 Running scraper.py...")
+    log("🔄 Running scraper.py...")
     result = subprocess.run(["python3", "scraper.py"], capture_output=True, text=True)
     print(result.stdout)
     if result.returncode != 0:
@@ -45,7 +59,7 @@ def update_all_workbooks():
         "SILVER option chain.xlsm"
     ]
     for file in files:
-        print(f"📝 Updating: {file}")
+        log(f"📝 Updating: {file}")
         update_xlsm_with_bhavcopy(file)
 
 # === STEP 4: ADD DROPDOWNS ===
@@ -56,24 +70,33 @@ def add_dropdowns():
         "SILVER option chain.xlsm"
     ]
     for file in files:
-        print(f"🎯 Adding dropdown to: {file}")
+        log(f"🎯 Adding dropdown to: {file}")
         add_date_dropdown_to_option_chain(file)
 
 # === MAIN EXECUTION ===
 if __name__ == "__main__":
+    logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(message)s',
+    handlers=[
+        logging.FileHandler("/Users/manan/Documents/git projects/commoditiesoptionchain/log.txt"),
+        logging.StreamHandler()
+    ]
+    )
+    log = logging.info
     if not is_connected():
-        print("❌ No internet connection. Retrying in 60 seconds...")
+        log("❌ No internet connection. Retrying in 60 seconds...")
         time.sleep(60)
         if not is_connected():
-            print("❌ Still no internet. Exiting.")
+            log("❌ Still no internet. Exiting.")
             exit(1)
 
     if not confirm_popup():
-        print("❌ Cancelled by user.")
+        log("❌ Cancelled by user.")
         exit(0)
 
     delete_old_bhavcopies(os.getcwd())
     run_scraper()
     update_all_workbooks()
     add_dropdowns()
-    print("✅ All tasks completed successfully.")
+    log("✅ All tasks completed successfully.")

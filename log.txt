@@ -1,0 +1,103 @@
+2025-07-17 11:03:15,876 - ❌ No internet connection. Retrying in 60 seconds...
+2025-07-17 11:04:16,167 - ❌ Still no internet. Exiting.
+2025-07-17 11:05:08,856 - ❌ No internet connection. Retrying in 60 seconds...
+2025-07-17 11:06:09,152 - ❌ Still no internet. Exiting.
+2025-07-17 11:08:31,325 - 🗑️ Deleting old file: /Users/manan/Documents/git projects/commoditiesoptionchain/BhavCopyDateWise_15072025.csv
+2025-07-17 11:08:31,328 - 🔄 Running scraper.py...
+2025-07-17 11:08:53,041 - 📝 Updating: GOLD option chain.xlsm
+2025-07-17 11:08:59,024 - 📝 Updating: CRUDEOIL option chain.xlsm
+2025-07-17 11:09:00,590 - 📝 Updating: SILVER option chain.xlsm
+2025-07-17 11:09:05,311 - 🎯 Adding dropdown to: GOLD option chain.xlsm
+2025-07-17 11:09:12,252 - 🎯 Adding dropdown to: CRUDEOIL option chain.xlsm
+2025-07-17 11:09:13,756 - 🎯 Adding dropdown to: SILVER option chain.xlsm
+2025-07-17 11:09:18,422 - ✅ All tasks completed successfully.
+2025-07-17 12:20:26,210 - ❌ No internet connection. Retrying in 60 seconds...
+2025-07-17 12:28:34,261 - ❌ Cancelled by user.
+2025-07-18 10:45:12,145 - 🔄 Running scraper.py...
+2025-07-18 10:51:10,402 - 🗑️ Deleting old file: /Users/manan/Documents/git projects/commoditiesoptionchain/BhavCopyDateWise_16072025.csv
+2025-07-18 10:51:10,405 - 🔄 Running scraper.py...
+2025-07-18 10:51:24,068 - 📝 Updating: GOLD option chain.xlsm
+2025-07-18 10:51:30,080 - 📝 Updating: CRUDEOIL option chain.xlsm
+2025-07-18 10:51:31,452 - 📝 Updating: SILVER option chain.xlsm
+2025-07-18 10:51:36,085 - 🎯 Adding dropdown to: GOLD option chain.xlsm
+2025-07-18 10:51:43,261 - 🎯 Adding dropdown to: CRUDEOIL option chain.xlsm
+2025-07-18 10:51:44,768 - 🎯 Adding dropdown to: SILVER option chain.xlsm
+2025-07-18 10:51:49,806 - ✅ All tasks completed successfully.
+2025-07-18 11:05:44,246 - ❌ Cancelled by user.
+2025-07-20 17:28:11,918 - 🔄 Running scraper.py...
+2025-07-22 10:16:03,525 - 🔄 Running scraper.py...
+2025-07-22 10:45:38,555 - ❌ Cancelled by user.
+2025-07-22 11:11:11,693 - ❌ Cancelled by user.
+2025-07-22 13:35:54,759 - 🗑️ Deleting old file: /Users/manan/Documents/git projects/commoditiesoptionchain/BhavCopyDateWise_17072025.csv
+2025-07-22 13:35:54,763 - 🔄 Running scraper.py...
+2025-07-22 13:36:10,618 - 📝 Updating: GOLD option chain.xlsm
+2025-07-22 13:36:17,587 - 📝 Updating: CRUDEOIL option chain.xlsm
+2025-07-22 13:36:19,085 - 📝 Updating: SILVER option chain.xlsm
+2025-07-22 13:36:23,764 - 🎯 Adding dropdown to: GOLD option chain.xlsm
+2025-07-22 13:36:30,664 - 🎯 Adding dropdown to: CRUDEOIL option chain.xlsm
+2025-07-22 13:36:32,167 - 🎯 Adding dropdown to: SILVER option chain.xlsm
+2025-07-22 13:36:36,751 - ✅ All tasks completed successfully.
+2025-07-22 13:42:50,624 - ❌ Cancelled by user.
+2025-07-23 17:54:38,183 - 🔄 Running scraper.py...
+2025-07-24 21:18:50,120 - 🔄 Running scraper.py...
+2025-07-25 20:09:04,473 - 🔄 Running scraper.py...
+2025-07-27 20:25:49,568 - 🔄 Running scraper.py...
+2025-07-28 10:45:02,084 - ❌ No internet connection. Retrying in 60 seconds...
+2025-07-28 10:46:02,236 - ❌ Still no internet. Exiting.
+2025-07-28 11:05:12,631 - 🔄 Running scraper.py...
+2025-07-28 11:06:10,028 - 🗑️ Deleting old file: /Users/manan/Documents/git projects/commoditiesoptionchain/BhavCopyDateWise_21072025.csv
+2025-07-28 11:06:10,031 - 🔄 Running scraper.py...
+2025-07-28 11:06:27,958 - 📝 Updating: GOLD option chain.xlsm
+2025-07-28 11:06:34,959 - 📝 Updating: CRUDEOIL option chain.xlsm
+2025-07-28 11:06:36,404 - 📝 Updating: SILVER option chain.xlsm
+2025-07-28 11:06:41,100 - 🎯 Adding dropdown to: GOLD option chain.xlsm
+2025-07-28 11:06:48,272 - 🎯 Adding dropdown to: CRUDEOIL option chain.xlsm
+2025-07-28 11:06:49,710 - 🎯 Adding dropdown to: SILVER option chain.xlsm
+2025-07-28 11:06:54,302 - ✅ All tasks completed successfully.
+2025-07-29 10:45:50,329 - 🔄 Running scraper.py...
+2025-07-29 10:46:05,744 - 🗑️ Deleting old file: /Users/manan/Documents/git projects/commoditiesoptionchain/BhavCopyDateWise_25072025.csv
+2025-07-29 10:46:05,745 - 🔄 Running scraper.py...
+2025-07-29 10:46:29,523 - 📝 Updating: GOLD option chain.xlsm
+2025-07-29 10:46:36,605 - 📝 Updating: CRUDEOIL option chain.xlsm
+2025-07-29 10:46:38,080 - 📝 Updating: SILVER option chain.xlsm
+2025-07-29 10:46:42,976 - 🎯 Adding dropdown to: GOLD option chain.xlsm
+2025-07-29 10:46:50,114 - 🎯 Adding dropdown to: CRUDEOIL option chain.xlsm
+2025-07-29 10:46:51,689 - 🎯 Adding dropdown to: SILVER option chain.xlsm
+2025-07-29 10:46:56,501 - ✅ All tasks completed successfully.
+2025-07-29 11:05:24,328 - ❌ Cancelled by user.
+2025-07-30 10:45:13,058 - 🔄 Running scraper.py...
+2025-07-30 10:45:22,621 - 🗑️ Deleting old file: /Users/manan/Documents/git projects/commoditiesoptionchain/BhavCopyDateWise_28072025.csv
+2025-07-30 10:45:22,624 - 🔄 Running scraper.py...
+2025-07-30 10:45:36,809 - 📝 Updating: GOLD option chain.xlsm
+2025-07-30 10:45:44,178 - 📝 Updating: CRUDEOIL option chain.xlsm
+2025-07-30 10:45:45,728 - 📝 Updating: SILVER option chain.xlsm
+2025-07-30 10:45:50,669 - 🎯 Adding dropdown to: GOLD option chain.xlsm
+2025-07-30 10:45:57,974 - 🎯 Adding dropdown to: CRUDEOIL option chain.xlsm
+2025-07-30 10:45:59,636 - 🎯 Adding dropdown to: SILVER option chain.xlsm
+2025-07-30 10:46:04,464 - ✅ All tasks completed successfully.
+2025-07-30 11:05:06,754 - ❌ Cancelled by user.
+2025-07-31 10:49:39,092 - ❌ No internet connection. Retrying in 60 seconds...
+2025-07-31 10:59:18,391 - ❌ Still no internet. Exiting.
+2025-07-31 11:16:30,256 - ❌ No internet connection. Retrying in 60 seconds...
+2025-07-31 11:29:05,335 - ❌ Still no internet. Exiting.
+2025-07-31 15:40:12,304 - 🗑️ Deleting old file: /Users/manan/Documents/git projects/commoditiesoptionchain/BhavCopyDateWise_29072025.csv
+2025-07-31 15:40:12,306 - 🔄 Running scraper.py...
+2025-07-31 15:40:27,257 - 📝 Updating: GOLD option chain.xlsm
+2025-07-31 15:40:34,331 - 📝 Updating: CRUDEOIL option chain.xlsm
+2025-07-31 15:40:35,793 - 📝 Updating: SILVER option chain.xlsm
+2025-07-31 15:40:40,618 - 🎯 Adding dropdown to: GOLD option chain.xlsm
+2025-07-31 15:40:47,695 - 🎯 Adding dropdown to: CRUDEOIL option chain.xlsm
+2025-07-31 15:40:49,275 - 🎯 Adding dropdown to: SILVER option chain.xlsm
+2025-07-31 15:40:53,976 - ✅ All tasks completed successfully.
+2025-08-01 10:45:02,681 - ❌ No internet connection. Retrying in 60 seconds...
+2025-08-01 10:48:47,182 - ❌ Still no internet. Exiting.
+2025-08-01 11:05:15,674 - 🔄 Running scraper.py...
+2025-08-01 11:05:24,653 - 🗑️ Deleting old file: /Users/manan/Documents/git projects/commoditiesoptionchain/BhavCopyDateWise_30072025.csv
+2025-08-01 11:05:24,656 - 🔄 Running scraper.py...
+2025-08-01 11:05:39,117 - 📝 Updating: GOLD option chain.xlsm
+2025-08-01 11:05:46,096 - 📝 Updating: CRUDEOIL option chain.xlsm
+2025-08-01 11:05:47,522 - 📝 Updating: SILVER option chain.xlsm
+2025-08-01 11:05:52,219 - 🎯 Adding dropdown to: GOLD option chain.xlsm
+2025-08-01 11:05:59,208 - 🎯 Adding dropdown to: CRUDEOIL option chain.xlsm
+2025-08-01 11:06:00,596 - 🎯 Adding dropdown to: SILVER option chain.xlsm
+2025-08-01 11:06:05,192 - ✅ All tasks completed successfully.
